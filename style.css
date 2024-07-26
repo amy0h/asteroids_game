@@ -1,0 +1,82 @@
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden; /* Prevent scrolling */
+  font-family: 'Press Start 2P', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black; 
+}
+
+#game {
+  position: relative; /* Make #game a positioning context */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+canvas {
+  border: 2px solid white;
+  border-radius: 5px; 
+  width: 500px;
+  height: 400px; 
+}
+
+#startButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-transform: uppercase;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 10; /* Ensure it appears above the canvas */
+  color: white;
+  background: none;
+  font-family: 'Press Start 2P', sans-serif;
+  border: 1px solid white; 
+  border-radius: 5px; 
+  padding: 10px 20px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+#startButton:hover {
+  transform: translate(-50%, -50%) scale(1.08);
+  background-color: gray;
+  background-color: #333333;
+}
+
+#lifeCount {
+  position: absolute;
+  top: -30px; /* Position it 10px above the canvas */
+  left: 10px;
+  color: white;
+  font-size: 16px;
+  font-family: 'Press Start 2P', sans-serif; /* Ensure the custom font is used */
+  z-index: 20; /* Ensure it appears above the canvas */
+}
+
+#pointsCount {
+  position: absolute;
+  top: -30px; /* Position it 10px above the canvas */
+  right: 10px;
+  color: white;
+  font-size: 16px;
+  font-family: 'Press Start 2P', sans-serif; /* Ensure the custom font is used */
+  z-index: 20; /* Ensure it appears above the canvas */
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.blink {
+  animation: blink 1s infinite;
+}
